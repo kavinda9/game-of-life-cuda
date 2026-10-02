@@ -1,14 +1,3 @@
-// gol_cpu.cpp
-// Conway's Game of Life - plain 2D array (single-threaded CPU) implementation.
-//
-// Modes:
-//   bench      : run N generations on a (possibly large) grid, print timing only
-//   visualize  : run on a smaller grid, write one .pgm image per generation
-//
-// Build:  g++ -O2 -o gol_cpu gol_cpu.cpp
-// Run:    ./gol_cpu bench 1024 1024 100
-//         ./gol_cpu visualize 64 64 120 frames
-
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>

@@ -1,14 +1,3 @@
-// gol_naive.cu
-// Conway's Game of Life - naive CUDA implementation.
-// One GPU thread per cell. Neighbor counts read directly from global memory
-// (no shared memory) -- this is the baseline to compare against gol_shared.cu.
-//
-// Build:  nvcc -O2 -o gol_naive gol_naive.cu
-// Run:    ./gol_naive bench 1024 1024 100 16 16
-//         ./gol_naive visualize 64 64 120 frames_gpu 16 16
-//
-// Args:   mode rows cols iters [blockX blockY]
-
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>

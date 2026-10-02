@@ -1,19 +1,3 @@
-// gol_shared.cu
-// Conway's Game of Life - CUDA implementation optimized with shared memory.
-//
-// Each thread block loads its tile of cells PLUS a 1-cell halo border into
-// fast on-chip shared memory once, then every thread in the block reads its
-// 8 neighbors from shared memory instead of repeatedly hitting slow global
-// memory (as gol_naive.cu does). Since every interior cell is read by up to
-// 8 different threads, this cuts redundant global-memory traffic roughly
-// 8x for the neighbor-counting step.
-//
-// Build:  nvcc -O2 -o gol_shared gol_shared.cu
-// Run:    ./gol_shared bench 1024 1024 100 16 16
-//         ./gol_shared visualize 64 64 120 frames_shared 16 16
-//
-// Args:   mode rows cols iters [blockX blockY]
-
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
